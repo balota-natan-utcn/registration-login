@@ -4,7 +4,9 @@ const cors = require('cors');
 
 const app = express();
 const port = 3100;
+
 app.use(cors());
+app.use(express.json());
 
 mongoose.connect('mongodb+srv://balotan61:lPUbBGFITDisXFRl@td-db.e9xh2sx.mongodb.net/logindb',
 {
@@ -31,6 +33,18 @@ app.get('/', (req, res) =>
     res.json({ status: 'OK' });
 });
 
+
+app.get('/users', async (req, res) =>
+{
+    try
+    {
+        const users = await User.find();
+        res.json(users);
+    }catch (err)
+    {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 const server = app.listen(port, () => 
 {

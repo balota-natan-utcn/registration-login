@@ -85,76 +85,12 @@
         <h1>Backend Test Interface</h1>
         <p>Click the button below to test your backend's root route:</p>
         
-        <button id="testBtn" onclick="testBackend()">Test Backend</button>
+        <button id="testBtn" onclick="testBackend()">Test Root Route</button>
+        <button id="usersBtn" onclick="testUsers()">Test Users Route</button>
         <button id="clearBtn" onclick="clearResponse()" style="background-color: #6c757d;">Clear Response</button>
         
         <div id="response"></div>
     </div>
-
-    <script>
-        const API_URL = 'http://localhost:3100/';
-        
-        async function testBackend() {
-            const testBtn = document.getElementById('testBtn');
-            const responseDiv = document.getElementById('response');
-            
-            // Show loading state
-            testBtn.disabled = true;
-            testBtn.textContent = 'Testing...';
-            responseDiv.innerHTML = '<div class="loading">Connecting to backend...</div>';
-            
-            try {
-                const response = await fetch(API_URL, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    responseDiv.innerHTML = `
-                        <div class="success">
-                            <strong>✅ Success!</strong>
-                            <p>Backend is running and responded successfully.</p>
-                            <strong>Response:</strong>
-                            <pre>${JSON.stringify(data, null, 2)}</pre>
-                            <small>Status: ${response.status} ${response.statusText}</small>
-                        </div>
-                    `;
-                } else {
-                    responseDiv.innerHTML = `
-                        <div class="error">
-                            <strong>❌ Error!</strong>
-                            <p>Backend responded with an error.</p>
-                            <strong>Status:</strong> ${response.status} ${response.statusText}
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                responseDiv.innerHTML = `
-                    <div class="error">
-                        <strong>❌ Connection Error!</strong>
-                        <p>Could not connect to the backend. Make sure:</p>
-                        <ul style="text-align: left; margin-top: 10px;">
-                            <li>Your backend is running on port 3100</li>
-                            <li>CORS is enabled if needed</li>
-                            <li>The URL is correct: ${API_URL}</li>
-                        </ul>
-                        <strong>Error details:</strong>
-                        <pre>${error.message}</pre>
-                    </div>
-                `;
-            } finally {
-                // Reset button state
-                testBtn.disabled = false;
-                testBtn.textContent = 'Test Backend';
-            }
-        }
-        
-        function clearResponse() {
-            document.getElementById('response').innerHTML = '';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
