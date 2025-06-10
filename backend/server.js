@@ -13,7 +13,7 @@ app.use(express.json());
 // JWT Secret - In production, use environment variable
 const JWT_SECRET = 'your-secret-key-change-this-in-production';
 
-mongoose.connect('mongodb+srv://balotan61:lPUbBGFITDisXFRl@td-db.e9xh2sx.mongodb.net/logindb', {
+mongoose.connect('mongodb+srv://balotan61:xxxxxxxxxxx@td-db.e9xh2sx.mongodb.net/logindb', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
