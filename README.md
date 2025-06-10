@@ -32,7 +32,7 @@ npm install \
 Set up environment variables: \
 Create a .env file in the backend directory. \
 Add your MongoDB connection string:
-MONGODB_URI=mongodb+srv://balotan61:lPUbBGFITDisXFRl@td-db.e9xh2sx.mongodb.net/logindb \
+MONGODB_URI=mongodb+srv://balotan61:xxxxxxxxxx@td-db.e9xh2sx.mongodb.net/logindb \
 Set a secure JWT secret:
 JWT_SECRET=your-secret-key \
 Important: Replace your-secret-keywith a strong, unique secret in a production environment. \
