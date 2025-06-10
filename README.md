@@ -3,7 +3,7 @@
 This project implements a user registration and login system with a backend server and a frontend interface. Users can create accounts, log in, and access protected routes. The backend handles user authentication, data storage, and API endpoints, while the frontend provides the user interface for interacting with the system.
 
 # Technologies Used
-# Backend
+Backend \
 Node.js: JavaScript runtime environment for the server.
 Express: Web application framework for Node.js.
 MongoDB: NoSQL database for storing user information.
@@ -11,7 +11,7 @@ Mongoose: MongoDB object modeling tool for Node.js.
 bcrypt: Library for hashing passwords.
 jsonwebtoken (JWT): Library for creating and verifying tokens for authentication.
 cors: Middleware to enable Cross-Origin Resource Sharing.
-# Frontend
+Frontend \
 HTML: Structures the webpage.
 CSS: Styles the webpage.
 JavaScript: Handles user interaction and API calls.
